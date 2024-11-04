@@ -1,5 +1,5 @@
-/* eslint array-bracket-spacing: 0 */
-/* eslint object-curly-spacing: 0 */
+/* eslint @stylistic/array-bracket-spacing: 0 */
+/* eslint @stylistic/object-curly-spacing: 0 */
 
 import {IPitchesForString, IScale, TPackName, TTuningName} from './types';
 

@@ -35,7 +35,7 @@ export default function Scale(props: Props) {
 		<select ref={cmbLenLo} value={props.scale.lengthLo} onChange={change}>
 			{c.SCALE_LENGTHS.map(len =>
 				<option key={len} value={len}>
-					{len}''
+					{len}&apos;&apos;
 				</option>,
 			)}
 		</select>
@@ -49,7 +49,7 @@ export default function Scale(props: Props) {
 			onChange={change}>
 			{c.SCALE_LENGTHS.map(len =>
 				<option key={len} value={len}>
-					{len}''
+					{len}&apos;&apos;
 				</option>,
 			)}
 		</select>

@@ -6,23 +6,31 @@ import stylistic from '@stylistic/eslint-plugin';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-	...tseslint.configs.recommended,
 	{
 		files: ['**/*.{ts,tsx}'],
+	},
+	{
 		languageOptions: {
 			globals: globals.browser,
 		},
-		...pluginJs.configs.recommended,
-		...pluginReact.configs.flat.recommended,
-		...pluginReact.configs.flat['jsx-runtime'],
+	},
+	pluginJs.configs.recommended,
+	...tseslint.configs.recommended,
+	pluginReact.configs.flat.recommended,
+	pluginReact.configs.flat['jsx-runtime'],
+	{
 		plugins: {
 			'@stylistic': stylistic,
 		},
+	},
+	{
 		settings: {
 			react: {
 				version: 'detect',
 			},
 		},
+	},
+	{
 		rules: {
 			'eqeqeq': ['warn', 'always'],
 			'no-empty': 'warn',

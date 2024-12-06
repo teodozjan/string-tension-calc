@@ -6,13 +6,6 @@ export default defineConfig(_cfg => ({
 	plugins: [
 		react(),
 	],
-	css: {
-		preprocessorOptions: {
-			scss: {
-				api: 'modern-compiler', // https://stackoverflow.com/a/79003101/6923555
-			},
-		},
-	},
 	resolve: {
 		alias: [{
 			find: '@',

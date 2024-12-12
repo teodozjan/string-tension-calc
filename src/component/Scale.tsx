@@ -1,7 +1,7 @@
 import {ChangeEvent, useRef} from 'react';
+import styled from '@emotion/styled';
 import {IScale, TScaleLength, TScaleMode} from '@/model/types';
 import * as c from '@/model/consts';
-import s from '@/component-styles/Scale.module.scss';
 
 interface Props {
 	scale: IScale;
@@ -23,7 +23,7 @@ export default function Scale(props: Props) {
 		props.onChange({mode, lengthLo, lengthHi});
 	}
 
-	return <div className={s.scaleRow}>
+	return <DivScaleRow>
 		<select ref={cmbMode} value={props.scale.mode} onChange={change}>
 			{c.SCALE_MODES.map(mode =>
 				<option key={mode} value={mode}>
@@ -39,11 +39,11 @@ export default function Scale(props: Props) {
 				</option>,
 			)}
 		</select>
-		<div style={{display: isMulti ? '' : 'none'}}>(low)</div>
+		<DivHideable isMulti={isMulti}>(low)</DivHideable>
 
-		<div style={{display: isMulti ? '' : 'none'}}>to</div>
+		<DivHideable isMulti={isMulti}>to</DivHideable>
 
-		<select style={{display: isMulti ? '' : 'none'}}
+		<SelectHideable isMulti={isMulti}
 			ref={cmbLenHi}
 			value={props.scale.lengthHi}
 			onChange={change}>
@@ -52,7 +52,19 @@ export default function Scale(props: Props) {
 					{len}&apos;&apos;
 				</option>,
 			)}
-		</select>
-		<div style={{display: isMulti ? '' : 'none'}}>(high)</div>
-	</div>;
+		</SelectHideable>
+		<DivHideable isMulti={isMulti}>(high)</DivHideable>
+	</DivScaleRow>;
 }
+
+const DivScaleRow = styled.div`
+	display: flex;
+	gap: 6px;
+	align-items: baseline;
+`;
+const DivHideable = styled.div<{isMulti: boolean}>`
+	display: ${props => props.isMulti ? '' : 'none'};
+`;
+const SelectHideable = styled.select<{isMulti: boolean}>`
+	display: ${props => props.isMulti ? '' : 'none'};
+`;

@@ -1,7 +1,7 @@
 import {AnimatePresence, motion} from 'framer-motion';
+import styled from '@emotion/styled';
 import {useStore} from '@/model/useStore';
 import Guitar from './Guitar';
-import s from '@/component-styles/GuitarList.module.scss';
 
 const animation = {
 	initial: {scale: 0},
@@ -15,9 +15,15 @@ export default function GuitarList() {
 
 	return <AnimatePresence>
 		{guitars.map((g, idx) =>
-			<motion.div key={g._id} className={s.gtrBlock} layout {...animation}>
+			<DivGtrBlock key={g._id} layout {...animation}>
 				<Guitar guitarIndex={idx} guitar={g} />
-			</motion.div>,
+			</DivGtrBlock>,
 		)}
 	</AnimatePresence>;
 }
+
+const DivGtrBlock = styled(motion.div)`
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 10px 10px 0;
+`;

@@ -1,17 +1,17 @@
 import {useEffect, useRef, useState} from 'react';
 import {Chart} from 'chart.js/auto';
+import styled from '@emotion/styled';
 import {useStore} from '@/model/useStore';
 import {countValidStrings} from '@/model/funcs';
 import * as c from '@/model/consts';
-import s from '@/component-styles/LineChart.module.scss';
 
 export default function LineChart() {
 	const canvas = useRef<HTMLCanvasElement | null>(null);
 	useChart(canvas.current);
 
-	return <div className={s.chart}>
+	return <DivChart>
 		<canvas ref={canvas} />
-	</div>;
+	</DivChart>;
 }
 
 function useChart(canvas: HTMLCanvasElement | null) {
@@ -61,3 +61,8 @@ function useChart(canvas: HTMLCanvasElement | null) {
 		}
 	}, [canvas, unit, guitars, chart]);
 }
+
+const DivChart = styled.div`
+	max-width: 100vw;
+	max-height: 240px;
+`;

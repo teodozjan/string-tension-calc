@@ -1,13 +1,9 @@
 import {defineConfig} from 'vite';
 import {resolve} from 'path';
 import react from '@vitejs/plugin-react';
-import wyw from '@wyw-in-js/vite';
 
 export default defineConfig(_cfg => ({
-	plugins: [
-		react(),
-		wyw(),
-	],
+	plugins: [react()],
 	resolve: {
 		alias: [{
 			find: '@',

@@ -19,7 +19,7 @@ export default function Guitar(props: Props) {
 	const changePack = useStore(s => s.changePack);
 	const changeTuning = useStore(s => s.changeTuning);
 
-	return <DivGtrBox index={props.guitarIndex % 7}>
+	return <DivGtrBox colorIndex={props.guitarIndex % 7}>
 		<DivTopRow>
 			<DivTopRowName>Guitar #{props.guitarIndex + 1}</DivTopRowName>
 			<DivTopRowBtns>
@@ -50,7 +50,7 @@ export default function Guitar(props: Props) {
 	</DivGtrBox>;
 }
 
-const DivGtrBox = styled.div<{index: number}>`
+const DivGtrBox = styled.div<{colorIndex: number}>`
 	padding: 2px 1px;
 	border: 1px solid #ddd;
 	border-top-width: 4px;
@@ -62,7 +62,7 @@ const DivGtrBox = styled.div<{index: number}>`
 		'#4bc0c0',
 		'#9966ff',
 		'#c9cbcf',
-	][props.index]};
+	][props.colorIndex]};
 
 	& > div {
 		padding: 3px 6px;

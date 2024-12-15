@@ -1,4 +1,4 @@
-import {ChangeEvent, useRef} from 'react';
+import {ChangeEvent} from 'react';
 import styled from '@emotion/styled';
 import {IScale, TScaleLength, TScaleMode} from '@/model/types';
 import * as c from '@/model/consts';
@@ -9,22 +9,32 @@ interface Props {
 }
 
 export default function Scale(props: Props) {
-	const cmbMode = useRef<HTMLSelectElement| null>(null);
-	const cmbLenLo = useRef<HTMLSelectElement| null>(null);
-	const cmbLenHi = useRef<HTMLSelectElement| null>(null);
 	const isMulti = props.scale.mode === 'multi';
 
-	function change(_ev: ChangeEvent<HTMLSelectElement>): void {
-		const mode = cmbMode.current!.value as TScaleMode;
-		const lengthLo = parseFloat(cmbLenLo.current!.value) as TScaleLength;
-		const lengthHi = (mode === 'normal')
-			? lengthLo
-			: parseFloat(cmbLenHi.current!.value) as TScaleLength;
-		props.onChange({mode, lengthLo, lengthHi});
+	function onChangeMode(ev: ChangeEvent<HTMLSelectElement>): void {
+		props.onChange({
+			mode: ev.target.value as TScaleMode,
+			lengthLo: props.scale.lengthLo,
+			lengthHi: isMulti ? props.scale.lengthHi : props.scale.lengthLo,
+		});
+	}
+	function onChangeLengthLo(ev: ChangeEvent<HTMLSelectElement>): void {
+		const lengthLo = parseFloat(ev.target.value) as TScaleLength;
+		props.onChange({
+			mode: props.scale.mode,
+			lengthLo,
+			lengthHi: isMulti ? props.scale.lengthHi : lengthLo,
+		});
+	}
+	function onChangeLengthHi(ev: ChangeEvent<HTMLSelectElement>): void {
+		props.onChange({
+			...props.scale,
+			lengthHi: isMulti ? parseFloat(ev.target.value) as TScaleLength : props.scale.lengthLo,
+		});
 	}
 
 	return <DivScaleRow>
-		<select ref={cmbMode} value={props.scale.mode} onChange={change}>
+		<select value={props.scale.mode} onChange={onChangeMode}>
 			{c.SCALE_MODES.map(mode =>
 				<option key={mode} value={mode}>
 					{mode}
@@ -32,7 +42,7 @@ export default function Scale(props: Props) {
 			)}
 		</select>
 
-		<select ref={cmbLenLo} value={props.scale.lengthLo} onChange={change}>
+		<select value={props.scale.lengthLo} onChange={onChangeLengthLo}>
 			{c.SCALE_LENGTHS.map(len =>
 				<option key={len} value={len}>
 					{len}&apos;&apos;
@@ -43,10 +53,7 @@ export default function Scale(props: Props) {
 
 		<DivHideable isMulti={isMulti}>to</DivHideable>
 
-		<SelectHideable isMulti={isMulti}
-			ref={cmbLenHi}
-			value={props.scale.lengthHi}
-			onChange={change}>
+		<SelectHideable isMulti={isMulti} value={props.scale.lengthHi} onChange={onChangeLengthHi}>
 			{c.SCALE_LENGTHS.map(len =>
 				<option key={len} value={len}>
 					{len}&apos;&apos;

@@ -1,11 +1,6 @@
 import {TNumStrings, TPackName} from '@/model/types';
 import * as c from '@/model/consts';
 
-interface Props {
-	packName: TPackName;
-	onChange(packName: TPackName): void;
-}
-
 const packsByNumStrings: {num: TNumStrings; packNames: TPackName[]}[] = [
 	{num: 6, packNames: []},
 	{num: 7, packNames: []},
@@ -16,7 +11,10 @@ c.PACKS.forEach(pack => {
 		.packNames.push(pack.name);
 });
 
-export default function Pack(props: Props) {
+export default function Pack(props: {
+	packName: TPackName;
+	onChange(packName: TPackName): void;
+}) {
 	return <select value={props.packName} onChange={e => props.onChange(e.target.value as TPackName)}>
 		{packsByNumStrings.map(group =>
 			<optgroup key={group.num} label={group.num +  ' strings'}>

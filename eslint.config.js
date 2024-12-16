@@ -6,7 +6,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-	{ ignores: ['build'] },
+	{ignores: ['build']},
 	{
 		extends: [js.configs.recommended, ...tseslint.configs.recommended],
 		files: ['**/*.{ts,tsx}'],
@@ -23,7 +23,7 @@ export default tseslint.config(
 			...reactHooks.configs.recommended.rules,
 			'react-refresh/only-export-components': [
 				'warn',
-				{ allowConstantExport: true },
+				{allowConstantExport: true},
 			],
 
 			'eqeqeq': ['warn', 'always'],

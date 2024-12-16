@@ -6,13 +6,11 @@ import * as c from '@/model/consts';
 import Gauge from './Gauge';
 import Note from './Note';
 
-interface Props {
+export default function StringRow(props: {
 	strIndex: number;
 	str: IString;
 	guitar: IGuitar;
-}
-
-export default function StringRow(props: Props) {
+}) {
 	const unit = useStore(s => s.unit);
 	const changeGauge = useStore(s => s.changeGauge);
 	const changeNote = useStore(s => s.changeNote);

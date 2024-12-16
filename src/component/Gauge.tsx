@@ -2,11 +2,6 @@ import {ChangeEvent} from 'react';
 import {TGauge} from '@/model/types';
 import * as c from '@/model/consts';
 
-interface Props {
-	gauge: TGauge;
-	onChange(gauge: TGauge): void;
-}
-
 const gaugesByKind: {kind: 'P'|'W'; label: string; gauges: TGauge[]}[] = [
 	{kind: 'P', label: 'Plain', gauges: []},
 	{kind: 'W', label: 'Wound', gauges: []},
@@ -16,7 +11,10 @@ c.GAUGES.forEach(gauge => {
 		.gauges.push(gauge);
 });
 
-export default function Gauge(props: Props) {
+export default function Gauge(props: {
+	gauge: TGauge;
+	onChange(gauge: TGauge): void;
+}) {
 	const gaugeStr = (props.gauge === null) ? '' : props.gauge;
 
 	function change(ev: ChangeEvent<HTMLSelectElement>): void {

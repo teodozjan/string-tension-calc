@@ -7,12 +7,10 @@ import StringRow from './StringRow';
 import Summation from './Summation';
 import Tuning from './Tuning';
 
-interface Props {
+export default function Guitar(props: {
 	guitarIndex: number;
 	guitar: IGuitar;
-}
-
-export default function Guitar(props: Props) {
+}) {
 	const moveLeft = useStore(s => s.moveLeft);
 	const remove = useStore(s => s.remove);
 	const changeScale = useStore(s => s.changeScale);

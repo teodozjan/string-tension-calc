@@ -3,12 +3,10 @@ import styled from '@emotion/styled';
 import {IScale, TScaleLength, TScaleMode} from '@/model/types';
 import * as c from '@/model/consts';
 
-interface Props {
+export default function Scale(props: {
 	scale: IScale;
 	onChange(scale: IScale): void;
-}
-
-export default function Scale(props: Props) {
+}) {
 	const isMulti = props.scale.mode === 'multi';
 
 	function onChangeMode(ev: ChangeEvent<HTMLSelectElement>): void {

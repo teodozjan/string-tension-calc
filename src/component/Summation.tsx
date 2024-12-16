@@ -3,11 +3,9 @@ import styled from '@emotion/styled';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
 
-interface Props {
+export default function Summation(props: {
 	guitar: IGuitar;
-}
-
-export default function Summation(props: Props) {
+}) {
 	const unit = useStore(s => s.unit);
 	const sum = useMemo(() =>
 		props.guitar.strings.reduce((accum, str) =>

@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import stylistic from '@stylistic/eslint-plugin';
@@ -17,6 +18,7 @@ export default tseslint.config(
 		plugins: {
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
+			'react': react,
 			'@stylistic': stylistic,
 		},
 		rules: {
@@ -30,6 +32,7 @@ export default tseslint.config(
 			'no-empty': 'warn',
 			'no-sparse-arrays': 'error',
 			'prefer-const': 'warn',
+			'react/jsx-key': 'warn',
 			'@stylistic/array-bracket-spacing': ['warn', 'never'],
 			'@stylistic/comma-dangle': ['warn', 'always-multiline'],
 			'@stylistic/indent': ['warn', 'tab'],

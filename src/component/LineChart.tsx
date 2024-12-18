@@ -43,20 +43,22 @@ function useChart(canvas: HTMLCanvasElement | null) {
 						},
 					}));
 				}
-			} else if (guitars.length === 0) {
-				chart.destroy();
-				setChart(null);
 			} else {
-				const maxNumStrs = Math.max(...guitars.map(gtr => countValidStrings(gtr)));
-				chart.data.labels = c.STRING_NAMES.slice(0, maxNumStrs).reverse();
-				chart.data.datasets = guitars.map((gtr, gtrIdx) => ({
-					label: 'Guitar #' + (gtrIdx + 1),
-					data: gtr.strings.map(str => str.tension).slice(0, maxNumStrs).reverse(),
-					tension: .1,
-					pointRadius: 8,
-					pointHoverRadius: 6,
-				}));
-				chart.update('none');
+				if (guitars.length === 0) {
+					chart.destroy();
+					setChart(null);
+				} else {
+					const maxNumStrs = Math.max(...guitars.map(gtr => countValidStrings(gtr)));
+					chart.data.labels = c.STRING_NAMES.slice(0, maxNumStrs).reverse();
+					chart.data.datasets = guitars.map((gtr, gtrIdx) => ({
+						label: 'Guitar #' + (gtrIdx + 1),
+						data: gtr.strings.map(str => str.tension).slice(0, maxNumStrs).reverse(),
+						tension: .1,
+						pointRadius: 8,
+						pointHoverRadius: 6,
+					}));
+					chart.update('none');
+				}
 			}
 		}
 	}, [canvas, unit, guitars, chart]);

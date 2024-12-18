@@ -7,6 +7,13 @@
 		"name": "Rodrigo César de Freitas Dias",
 		"email": "rcesar@gmail.com"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rodrigocfd/string-tension-calc.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rodrigocfd/string-tension-calc/issues"
+	},
 	"homepage": "https://rodrigocfd.github.io/string-tension-calc",
 	"license": "MIT",
 	"scripts": {
@@ -30,8 +37,8 @@
 		"@eslint/js": "^9.17.0",
 		"@stylistic/eslint-plugin": "^2.12.1",
 		"@types/node": "^22.10.2",
-		"@types/react": "^18.3.12",
-		"@types/react-dom": "^18.3.1",
+		"@types/react": "^19.0.1",
+		"@types/react-dom": "^19.0.2",
 		"@vitejs/plugin-react": "^4.3.4",
 		"eslint": "^9.17.0",
 		"eslint-plugin-react": "^7.37.2",
@@ -40,7 +47,7 @@
 		"gh-pages": "^6.2.0",
 		"globals": "^15.13.0",
 		"typescript": "~5.7.2",
-		"typescript-eslint": "^8.18.0",
+		"typescript-eslint": "^8.18.1",
 		"vite": "^6.0.3"
 	}
 }

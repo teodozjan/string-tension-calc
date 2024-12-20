@@ -39,6 +39,7 @@ export default tseslint.config(
 			'@stylistic/array-bracket-spacing': ['warn', 'never'],
 			'@stylistic/comma-dangle': ['warn', 'always-multiline'],
 			'@stylistic/comma-spacing': 'warn',
+			'@stylistic/eol-last': 'warn',
 			'@stylistic/indent': ['warn', 'tab'],
 			'@stylistic/jsx-quotes': ['warn', 'prefer-single'],
 			'@stylistic/key-spacing': ['warn', {beforeColon: false, afterColon: true, mode: 'minimum'}],

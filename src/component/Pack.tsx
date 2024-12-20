@@ -1,5 +1,5 @@
-import {TNumStrings, TPackName} from '@/model/types';
 import * as c from '@/model/consts';
+import {TNumStrings, TPackName} from '@/model/types';
 
 const packsByNumStrings: {num: TNumStrings; packNames: TPackName[]}[] = [
 	{num: 6, packNames: []},

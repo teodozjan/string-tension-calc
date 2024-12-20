@@ -1,9 +1,9 @@
 import {create} from 'zustand';
 import {combine} from 'zustand/middleware';
 import {immer} from 'zustand/middleware/immer';
-import {IGuitar, IScale, IString, TGauge, TNote, TPackName, TTuningName, TUnit} from './types';
-import {calcTension, countValidStrings, genStrings, nextId} from './funcs';
 import * as c from './consts';
+import {calcTension, countValidStrings, genStrings, nextId} from './funcs';
+import {IGuitar, IScale, IString, TGauge, TNote, TPackName, TTuningName, TUnit} from './types';
 
 export const useStore = create(immer(
 	combine({

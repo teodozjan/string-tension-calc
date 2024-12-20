@@ -1,6 +1,6 @@
 import {ChangeEvent} from 'react';
-import {TGauge} from '@/model/types';
 import * as c from '@/model/consts';
+import {TGauge} from '@/model/types';
 
 const gaugesByKind: {kind: 'P'|'W'; label: string; gauges: TGauge[]}[] = [
 	{kind: 'P', label: 'Plain', gauges: []},

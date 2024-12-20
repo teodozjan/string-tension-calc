@@ -1,5 +1,5 @@
-import {IGuitar, IScale, IString, TGauge, TNote, TPackName, TTuningName, TUnit} from './types';
 import * as c from './consts';
+import {IGuitar, IScale, IString, TGauge, TNote, TPackName, TTuningName, TUnit} from './types';
 
 let curId = 0;
 export function nextId(): number {

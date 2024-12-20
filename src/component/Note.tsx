@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
-import {TNote} from '@/model/types';
 import * as c from '@/model/consts';
+import {TNote} from '@/model/types';
 
 export default function Note(props: {
 	strIndex: number;

@@ -1,5 +1,5 @@
-import {TTuningName} from '@/model/types';
 import * as c from '@/model/consts';
+import {TTuningName} from '@/model/types';
 
 const tuningsByKind: {kind: string; tuningNames: TTuningName[]}[] = [
 	{kind: 'Standard', tuningNames: []},

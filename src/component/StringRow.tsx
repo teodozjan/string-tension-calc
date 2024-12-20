@@ -1,8 +1,8 @@
 import {useMemo} from 'react';
 import styled from 'styled-components';
+import * as c from '@/model/consts';
 import {IGuitar, IString} from '@/model/types';
 import {useStore} from '@/model/useStore';
-import * as c from '@/model/consts';
 import Gauge from './Gauge';
 import Note from './Note';
 

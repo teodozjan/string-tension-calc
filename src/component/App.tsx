@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import ghlogo from '/ghlogo.svg';
 import {useStore} from '@/model/useStore';
 import GuitarList from './GuitarList';
 import LineChart from './LineChart';
 import Unit from './Unit';
-import ghlogo from '/ghlogo.svg';
 
 export default function App() {
 	const addNew = useStore(s => s.addNew);

@@ -1,9 +1,9 @@
-import {AnimatePresence, motion} from 'framer-motion';
+import {AnimatePresence, HTMLMotionProps, motion} from 'framer-motion';
 import styled from '@emotion/styled';
 import {useStore} from '@/model/useStore';
 import Guitar from './Guitar';
 
-const animation = {
+const animation: HTMLMotionProps<'div'> = {
 	initial: {scale: 0},
 	animate: {scale: 1},
 	exit: {scale: 0},

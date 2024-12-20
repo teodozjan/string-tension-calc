@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import {IGuitar, IString} from '@/model/types';
 import {useStore} from '@/model/useStore';
 import * as c from '@/model/consts';

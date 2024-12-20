@@ -1,5 +1,5 @@
 import {ChangeEvent} from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import {IScale, TScaleLength, TScaleMode} from '@/model/types';
 import * as c from '@/model/consts';
 

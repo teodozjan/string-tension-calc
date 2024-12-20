@@ -1,5 +1,5 @@
 import {AnimatePresence, HTMLMotionProps, motion} from 'framer-motion';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import {useStore} from '@/model/useStore';
 import Guitar from './Guitar';
 

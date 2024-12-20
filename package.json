@@ -25,12 +25,12 @@
 		"deploy": "gh-pages -d build"
 	},
 	"dependencies": {
-		"@emotion/styled": "^11.14.0",
 		"chart.js": "^4.4.7",
 		"framer-motion": "^11.15.0",
 		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
+		"styled-components": "^6.1.13",
 		"zustand": "^5.0.2"
 	},
 	"devDependencies": {
@@ -48,6 +48,6 @@
 		"globals": "^15.14.0",
 		"typescript": "~5.7.2",
 		"typescript-eslint": "^8.18.1",
-		"vite": "^6.0.4"
+		"vite": "^6.0.5"
 	}
 }

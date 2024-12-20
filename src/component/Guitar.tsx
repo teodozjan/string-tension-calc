@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
 import Pack from './Pack';

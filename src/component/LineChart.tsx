@@ -1,6 +1,6 @@
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {Chart, ChartData} from 'chart.js/auto';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
 import {countValidStrings} from '@/model/funcs';

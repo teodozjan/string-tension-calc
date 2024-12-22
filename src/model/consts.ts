@@ -1,5 +1,6 @@
-/* eslint-disable @stylistic/array-bracket-spacing */
-/* eslint-disable @stylistic/object-curly-spacing */
+// eslint-disable @stylistic/array-bracket-spacing
+// eslint-disable @stylistic/comma-spacing
+// eslint-disable @stylistic/object-curly-spacing
 
 import {IPitchesForString, IScale, TPackName, TTuningName} from './types';
 
@@ -71,44 +72,44 @@ export const GAUGES = [
 export const NUM_STRINGS = [6, 7, 8] as const;
 
 export const PACKS = [
-	{gauges: ['.007 P', '.009 P', '.011 P', '.020 W', '.030 W', '.038 W', null,     null    ], name: ".007 Dunlop Rev. Willy's"},
-	{gauges: ['.007 P', '.009 P', '.013 P', '.020 W', '.026 W', '.036 W', null,     null    ], name: '.007 Ernie Ball Zippy Slinky'},
-	{gauges: ['.008 P', '.010 P', '.012 P', '.020 W', '.030 W', '.040 W', null,     null    ], name: ".008 Dunlop Rev. Willy's"},
-	{gauges: ['.008 P', '.010 P', '.015 P', '.021 W', '.030 W', '.038 W', null,     null    ], name: ".008 D'Addario EXL130"},
-	{gauges: ['.008 P', '.011 P', '.014 P', '.022 W', '.030 W', '.038 W', null,     null    ], name: '.008 Ernie Ball Extra Slinky'},
-	{gauges: ['.008 P', '.011 P', '.016 P', '.024 W', '.030 W', '.038 W', null,     null    ], name: '.008 Dunlop Extra Light'},
-	{gauges: ['.008 P', '.011 P', '.014 P', '.022 W', '.032 W', '.046 W', null,     null    ], name: '.008 Fender Yngwie Malmsteen'},
-	{gauges: ['.0085 P','.0105 P','.015 P', '.022 W', '.032 W', '.039 W', null,     null    ], name: ".0085 D'Addario EXL130+"},
-	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', null,     null    ], name: ".009 D'Addario / Ernie Ball"},
-	{gauges: ['.009 P', '.011 P', '.016 P', '.026 W', '.036 W', '.046 W', null,     null    ], name: ".009 D'Addario / Ernie Ball hybrid"},
-	{gauges: ['.009 P', '.012 P', '.015 P', '.022 W', '.030 W', '.040 W', null,     null    ], name: ".009 D'Addario EXL120BT balanced"},
-	{gauges: ['.0095 P','.0115 P','.016 P', '.024 W', '.034 W', '.044 W', null,     null    ], name: ".0095 D'Addario EXL120+"},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.026 W', '.036 W', '.046 W', null,     null    ], name: ".010 D'Addario / Ernie Ball"},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.030 W', '.042 W', '.052 W', null,     null    ], name: ".010 D'Addario / Ernie Ball hybrid"},
-	{gauges: ['.010 P', '.0135 P','.017 P', '.025 W', '.034 W', '.046 W', null,     null    ], name: ".010 D'Addario EXL110BT balanced"},
-	{gauges: ['.010 P', '.012 P', '.016 P', '.028 W', '.038 W', '.048 W', null,     null    ], name: '.010 GHS David Gilmour'},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.028 W', '.038 W', '.048 W', null,     null    ], name: '.010 Dunlop Heavy Core Heavy'},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.036 W', '.052 W', '.060 W', null,     null    ], name: '.010 Dunlop Zakk Wylde'},
-	{gauges: ['.0105 P','.0135 P','.018 P', '.028 W', '.038 W', '.048 W', null,     null    ], name: ".0105 D'Addario EXL110+"},
-	{gauges: ['.011 P', '.014 P', '.018 P', '.028 W', '.038 W', '.049 W', null,     null    ], name: ".011 D'Addario EXL115"},
-	{gauges: ['.011 P', '.015 P', '.019 P', '.028 W', '.037 W', '.050 W', null,     null    ], name: ".011 D'Addario EXL115BT balanced"},
-	{gauges: ['.011 P', '.014 P', '.018 P', '.028 W', '.038 W', '.048 W', null,     null    ], name: '.011 Ernie Ball Power Slinky'},
-	{gauges: ['.011 P', '.014 P', '.018 P', '.028 W', '.038 W', '.050 W', null,     null    ], name: '.011 Dunlop Heavy Core Heavier'},
-	{gauges: ['.011 P', '.014 P', '.019 P', '.032 W', '.044 W', '.056 W', null,     null    ], name: ".011 D'Addario EXL117"},
-	{gauges: ['.012 P', '.016 P', '.020 P', '.032 W', '.042 W', '.054 W', null,     null    ], name: ".012 D'Addario EXL145"},
-	{gauges: ['.012 P', '.016 P', '.020 W', '.034 W', '.046 W', '.060 W', null,     null    ], name: ".012 D'Addario EXL148"},
-	{gauges: ['.012 P', '.016 P', '.024 W', '.032 W', '.042 W', '.052 W', null,     null    ], name: ".012 D'Addario EJ21"},
-	{gauges: ['.012 P', '.016 P', '.024 P', '.032 W', '.044 W', '.056 W', null,     null    ], name: '.012 Ernie Ball Not Even Slinky'},
-	{gauges: ['.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.062 W', null,     null    ], name: ".013 D'Addario EXL158"},
-	{gauges: ['.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.056 W', null,     null    ], name: ".013 D'Addario EJ22"},
-	{gauges: ['.013 P', '.018 P', '.030 W', '.044 W', '.056 W', '.072 W', null,     null    ], name: '.013 Ernie Ball Baritone Slinky'},
-	{gauges: ['.014 P', '.018 P', '.026 W', '.044 W', '.056 W', '.068 W', null,     null    ], name: ".014 D'Addario EXL157"},
-	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', '.054 W', null    ], name: ".009 D'Addario EXL120-7"},
-	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', '.052 W', null    ], name: '.009 Ernie Ball Super Slinky 7'},
-	{gauges: ['.0095 P','.013 P', '.016 P', '.024 W', '.034 W', '.046 W', '.064 W', null    ], name: '.0095 Strandberg Optimized'},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.059 W', null    ], name: ".010 D'Addario EXL110-7"},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.056 W', null    ], name: '.010 Ernie Ball Regular Slinky 7'},
-	{gauges: ['.010 P', '.013 P', '.017 P', '.028 W', '.038 W', '.048 W', '.060 W', null    ], name: '.010 Dunlop Heavy Core Heavy7'},
+	{gauges: ['.007 P', '.009 P', '.011 P', '.020 W', '.030 W', '.038 W', null,     null], name: ".007 Dunlop Rev. Willy's"},
+	{gauges: ['.007 P', '.009 P', '.013 P', '.020 W', '.026 W', '.036 W', null,     null], name: '.007 Ernie Ball Zippy Slinky'},
+	{gauges: ['.008 P', '.010 P', '.012 P', '.020 W', '.030 W', '.040 W', null,     null], name: ".008 Dunlop Rev. Willy's"},
+	{gauges: ['.008 P', '.010 P', '.015 P', '.021 W', '.030 W', '.038 W', null,     null], name: ".008 D'Addario EXL130"},
+	{gauges: ['.008 P', '.011 P', '.014 P', '.022 W', '.030 W', '.038 W', null,     null], name: '.008 Ernie Ball Extra Slinky'},
+	{gauges: ['.008 P', '.011 P', '.016 P', '.024 W', '.030 W', '.038 W', null,     null], name: '.008 Dunlop Extra Light'},
+	{gauges: ['.008 P', '.011 P', '.014 P', '.022 W', '.032 W', '.046 W', null,     null], name: '.008 Fender Yngwie Malmsteen'},
+	{gauges: ['.0085 P', '.0105 P', '.015 P', '.022 W', '.032 W', '.039 W', null,     null], name: ".0085 D'Addario EXL130+"},
+	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', null,     null], name: ".009 D'Addario / Ernie Ball"},
+	{gauges: ['.009 P', '.011 P', '.016 P', '.026 W', '.036 W', '.046 W', null,     null], name: ".009 D'Addario / Ernie Ball hybrid"},
+	{gauges: ['.009 P', '.012 P', '.015 P', '.022 W', '.030 W', '.040 W', null,     null], name: ".009 D'Addario EXL120BT balanced"},
+	{gauges: ['.0095 P', '.0115 P', '.016 P', '.024 W', '.034 W', '.044 W', null,     null], name: ".0095 D'Addario EXL120+"},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.026 W', '.036 W', '.046 W', null,     null], name: ".010 D'Addario / Ernie Ball"},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.030 W', '.042 W', '.052 W', null,     null], name: ".010 D'Addario / Ernie Ball hybrid"},
+	{gauges: ['.010 P', '.0135 P', '.017 P', '.025 W', '.034 W', '.046 W', null,     null], name: ".010 D'Addario EXL110BT balanced"},
+	{gauges: ['.010 P', '.012 P', '.016 P', '.028 W', '.038 W', '.048 W', null,     null], name: '.010 GHS David Gilmour'},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.028 W', '.038 W', '.048 W', null,     null], name: '.010 Dunlop Heavy Core Heavy'},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.036 W', '.052 W', '.060 W', null,     null], name: '.010 Dunlop Zakk Wylde'},
+	{gauges: ['.0105 P', '.0135 P', '.018 P', '.028 W', '.038 W', '.048 W', null,     null], name: ".0105 D'Addario EXL110+"},
+	{gauges: ['.011 P', '.014 P', '.018 P', '.028 W', '.038 W', '.049 W', null,     null], name: ".011 D'Addario EXL115"},
+	{gauges: ['.011 P', '.015 P', '.019 P', '.028 W', '.037 W', '.050 W', null,     null], name: ".011 D'Addario EXL115BT balanced"},
+	{gauges: ['.011 P', '.014 P', '.018 P', '.028 W', '.038 W', '.048 W', null,     null], name: '.011 Ernie Ball Power Slinky'},
+	{gauges: ['.011 P', '.014 P', '.018 P', '.028 W', '.038 W', '.050 W', null,     null], name: '.011 Dunlop Heavy Core Heavier'},
+	{gauges: ['.011 P', '.014 P', '.019 P', '.032 W', '.044 W', '.056 W', null,     null], name: ".011 D'Addario EXL117"},
+	{gauges: ['.012 P', '.016 P', '.020 P', '.032 W', '.042 W', '.054 W', null,     null], name: ".012 D'Addario EXL145"},
+	{gauges: ['.012 P', '.016 P', '.020 W', '.034 W', '.046 W', '.060 W', null,     null], name: ".012 D'Addario EXL148"},
+	{gauges: ['.012 P', '.016 P', '.024 W', '.032 W', '.042 W', '.052 W', null,     null], name: ".012 D'Addario EJ21"},
+	{gauges: ['.012 P', '.016 P', '.024 P', '.032 W', '.044 W', '.056 W', null,     null], name: '.012 Ernie Ball Not Even Slinky'},
+	{gauges: ['.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.062 W', null,     null], name: ".013 D'Addario EXL158"},
+	{gauges: ['.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.056 W', null,     null], name: ".013 D'Addario EJ22"},
+	{gauges: ['.013 P', '.018 P', '.030 W', '.044 W', '.056 W', '.072 W', null,     null], name: '.013 Ernie Ball Baritone Slinky'},
+	{gauges: ['.014 P', '.018 P', '.026 W', '.044 W', '.056 W', '.068 W', null,     null], name: ".014 D'Addario EXL157"},
+	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', '.054 W', null], name: ".009 D'Addario EXL120-7"},
+	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', '.052 W', null], name: '.009 Ernie Ball Super Slinky 7'},
+	{gauges: ['.0095 P', '.013 P', '.016 P', '.024 W', '.034 W', '.046 W', '.064 W', null], name: '.0095 Strandberg Optimized'},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.059 W', null], name: ".010 D'Addario EXL110-7"},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.026 W', '.036 W', '.046 W', '.056 W', null], name: '.010 Ernie Ball Regular Slinky 7'},
+	{gauges: ['.010 P', '.013 P', '.017 P', '.028 W', '.038 W', '.048 W', '.060 W', null], name: '.010 Dunlop Heavy Core Heavy7'},
 	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.032 W', '.042 W', '.054 W', '.065 W'], name: ".009 D'Addario EXL120-8"},
 	{gauges: ['.009 P', '.011 P', '.016 P', '.024 W', '.034 W', '.046 W', '.064 W', '.080 W'], name: '.009 Ernie Ball 8-String Heavy Bottom'},
 	{gauges: ['.009 P', '.012 P', '.015 P', '.022 W', '.030 W', '.042 W', '.056 W', '.084 W'], name: '.009 Strandberg Optimized'},
@@ -116,28 +117,28 @@ export const PACKS = [
 ] as const;
 
 export const PITCHES = [
-	{note: 'F4',  freq: 349.228 },
-	{note: 'E4',  freq: 329.628 }, // guitar high E
-	{note: 'D#4', freq: 311.127 },
-	{note: 'D4',  freq: 293.665 },
-	{note: 'C#4', freq: 277.183 },
-	{note: 'C4',  freq: 261.626 },
-	{note: 'B3',  freq: 246.942 }, // guitar high B
-	{note: 'A#3', freq: 233.082 },
-	{note: 'A3',  freq: 220     },
-	{note: 'G#3', freq: 207.652 },
-	{note: 'G3',  freq: 195.998 }, // guitar G
-	{note: 'F#3', freq: 184.997 },
-	{note: 'F3',  freq: 174.614 },
-	{note: 'E3',  freq: 164.814 },
-	{note: 'D#3', freq: 155.563 },
-	{note: 'D3',  freq: 146.832 }, // guitar D
-	{note: 'C#3', freq: 138.591 },
-	{note: 'C3',  freq: 130.813 },
-	{note: 'B2',  freq: 123.471 },
-	{note: 'A#2', freq: 116.541 },
-	{note: 'A2',  freq: 110     }, // guitar A
-	{note: 'G#2', freq: 103.826 },
+	{note: 'F4',  freq: 349.228},
+	{note: 'E4',  freq: 329.628}, // guitar high E
+	{note: 'D#4', freq: 311.127},
+	{note: 'D4',  freq: 293.665},
+	{note: 'C#4', freq: 277.183},
+	{note: 'C4',  freq: 261.626},
+	{note: 'B3',  freq: 246.942}, // guitar high B
+	{note: 'A#3', freq: 233.082},
+	{note: 'A3',  freq: 220},
+	{note: 'G#3', freq: 207.652},
+	{note: 'G3',  freq: 195.998}, // guitar G
+	{note: 'F#3', freq: 184.997},
+	{note: 'F3',  freq: 174.614},
+	{note: 'E3',  freq: 164.814},
+	{note: 'D#3', freq: 155.563},
+	{note: 'D3',  freq: 146.832}, // guitar D
+	{note: 'C#3', freq: 138.591},
+	{note: 'C3',  freq: 130.813},
+	{note: 'B2',  freq: 123.471},
+	{note: 'A#2', freq: 116.541},
+	{note: 'A2',  freq: 110}, // guitar A
+	{note: 'G#2', freq: 103.826},
 	{note: 'G2',  freq:  97.9989},
 	{note: 'F#2', freq:  92.4686},
 	{note: 'F2',  freq:  87.3071},
@@ -148,7 +149,7 @@ export const PITCHES = [
 	{note: 'C2',  freq:  65.4064},
 	{note: 'B1',  freq:  61.7354}, // 7-string guitar low B
 	{note: 'A#1', freq:  58.2705},
-	{note: 'A1',  freq:  55     },
+	{note: 'A1',  freq:  55},
 	{note: 'G#1', freq:  51.9131},
 	{note: 'G1',  freq:  48.9994},
 	{note: 'F#1', freq:  46.2493}, // 8-string guitar low F#
@@ -160,7 +161,7 @@ export const PITCHES = [
 	{note: 'C1',  freq:  32.7032},
 	{note: 'B0',  freq:  30.8677},
 	{note: 'A#0', freq:  29.1352},
-	{note: 'A0',  freq:  27.5   },
+	{note: 'A0',  freq:  27.5},
 ] as const;
 
 export const SCALE_MODES = [
@@ -190,22 +191,22 @@ export const STRING_NAMES = [
 ];
 
 export const TUNINGS = [
-	{name: 'F standard',  notes: ['F4', 'C4', 'G#3','D#3','A#2','F2', 'C2', 'G1' ]},
+	{name: 'F standard',  notes: ['F4', 'C4', 'G#3', 'D#3', 'A#2', 'F2', 'C2', 'G1']},
 	{name: 'E standard',  notes: ['E4', 'B3', 'G3', 'D3', 'A2', 'E2', 'B1', 'F#1']},
-	{name: 'Eb standard', notes: ['D#4','A#3','F#3','C#3','G#2','D#2','A#1','F1' ]},
-	{name: 'D standard',  notes: ['D4', 'A3', 'F3', 'C3', 'G2', 'D2', 'A1', 'E1' ]},
-	{name: 'C# standard', notes: ['C#4','G#3','E3', 'B2', 'F#2','C#2','G#1','D#1']},
-	{name: 'C standard',  notes: ['C4', 'G3', 'D#3','A#2','F2', 'C2', 'G1', 'D1' ]},
-	{name: 'B standard',  notes: ['B3', 'F#3','D3', 'A2', 'E2', 'B1', 'F#1','C#1']},
-	{name: 'Bb standard', notes: ['A#3','F3', 'C#3','G#2','D#2','A#1','F1', 'C1' ]},
-	{name: 'A standard',  notes: ['A3', 'E3', 'C3', 'G2', 'D2', 'A1', 'E1', 'B0' ]},
-	{name: 'Ab standard', notes: ['G#3','D#3','B2', 'F#2','C#2','G#1','D#1','A#0']},
-	{name: 'G standard',  notes: ['G3', 'D3', 'A#2','F2', 'C2', 'G1', 'D1', 'A0' ]},
+	{name: 'Eb standard', notes: ['D#4', 'A#3', 'F#3', 'C#3', 'G#2', 'D#2', 'A#1', 'F1']},
+	{name: 'D standard',  notes: ['D4', 'A3', 'F3', 'C3', 'G2', 'D2', 'A1', 'E1']},
+	{name: 'C# standard', notes: ['C#4', 'G#3', 'E3', 'B2', 'F#2', 'C#2', 'G#1', 'D#1']},
+	{name: 'C standard',  notes: ['C4', 'G3', 'D#3', 'A#2', 'F2', 'C2', 'G1', 'D1']},
+	{name: 'B standard',  notes: ['B3', 'F#3', 'D3', 'A2', 'E2', 'B1', 'F#1', 'C#1']},
+	{name: 'Bb standard', notes: ['A#3', 'F3', 'C#3', 'G#2', 'D#2', 'A#1', 'F1', 'C1']},
+	{name: 'A standard',  notes: ['A3', 'E3', 'C3', 'G2', 'D2', 'A1', 'E1', 'B0']},
+	{name: 'Ab standard', notes: ['G#3', 'D#3', 'B2', 'F#2', 'C#2', 'G#1', 'D#1', 'A#0']},
+	{name: 'G standard',  notes: ['G3', 'D3', 'A#2', 'F2', 'C2', 'G1', 'D1', 'A0']},
 
-	{name: 'Drop D',  notes: ['E4', 'B3', 'G3', 'D3', 'A2', 'D2', 'A1', 'E1' ]},
-	{name: 'Drop C#', notes: ['D#4','A#3','F#3','C#3','G#2','C#2','G#1','D#1']},
-	{name: 'Drop C',  notes: ['D4', 'A3', 'F3', 'C3', 'G2', 'C2', 'G1', 'D1' ]},
-	{name: 'Drop B',  notes: ['C#4','G#3','E3', 'B2', 'F#2','B1', 'F#1','C#1']},
+	{name: 'Drop D',  notes: ['E4', 'B3', 'G3', 'D3', 'A2', 'D2', 'A1', 'E1']},
+	{name: 'Drop C#', notes: ['D#4', 'A#3', 'F#3', 'C#3', 'G#2', 'C#2', 'G#1', 'D#1']},
+	{name: 'Drop C',  notes: ['D4', 'A3', 'F3', 'C3', 'G2', 'C2', 'G1', 'D1']},
+	{name: 'Drop B',  notes: ['C#4', 'G#3', 'E3', 'B2', 'F#2', 'B1', 'F#1', 'C#1']},
 ] as const;
 
 export const UNITS = [

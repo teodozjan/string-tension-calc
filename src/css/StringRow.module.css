@@ -4,6 +4,7 @@
 	&.name {
 		width: 26px;
 	}
+
 	&.yesModif {
 		padding: 1px;
 		border: 1px solid red;

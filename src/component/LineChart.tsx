@@ -4,7 +4,7 @@ import * as c from '@/model/consts';
 import {countValidStrings} from '@/model/funcs';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
-import css from './LineChart.module.css';
+import css from '@/css/LineChart.module.css';
 
 export default function LineChart() {
 	const guitars = useStore(s => s.guitars);

@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
-import css from './Summation.module.css';
+import css from '@/css/Summation.module.css';
 
 interface Props {
 	guitar: IGuitar;

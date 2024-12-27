@@ -5,7 +5,7 @@ import {IGuitar, IString, TGauge, TNote, TPackName, TTuningName} from '@/model/t
 import {useStore} from '@/model/useStore';
 import Gauge from './Gauge';
 import Note from './Note';
-import css from './StringRow.module.css';
+import css from '@/css/StringRow.module.css';
 
 interface Props {
 	strIndex: number;

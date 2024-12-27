@@ -6,7 +6,7 @@ import Scale from './Scale';
 import StringRow from './StringRow';
 import Summation from './Summation';
 import Tuning from './Tuning';
-import css from './Guitar.module.css';
+import css from '@/css/Guitar.module.css';
 
 interface Props {
 	guitarIndex: number;

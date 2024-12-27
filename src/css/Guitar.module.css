@@ -9,6 +9,7 @@
 	&.color4 { border-top-color: #4bc0c0; }
 	&.color5 { border-top-color: #9966ff; }
 	&.color6 { border-top-color: #c9cbcf; }
+
 	& > div {
 		padding: 3px 6px;
 	}

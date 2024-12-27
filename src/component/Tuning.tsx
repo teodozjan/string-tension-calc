@@ -6,7 +6,12 @@ interface Props {
 	onChange(tuningName: TTuningName): void;
 }
 
-const tuningsByKind: {kind: string; tuningNames: TTuningName[]}[] = [
+interface TuningsByKind {
+	kind: string;
+	tuningNames: TTuningName[];
+}
+
+const tuningsByKind: TuningsByKind[] = [
 	{kind: 'Standard', tuningNames: []},
 	{kind: 'Drop', tuningNames: []},
 ];

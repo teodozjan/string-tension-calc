@@ -7,7 +7,13 @@ interface Props {
 	onChange(gauge: TGauge): void;
 }
 
-const gaugesByKind: {kind: 'P'|'W'; label: string; gauges: TGauge[]}[] = [
+interface GaugesByKind {
+	kind: 'P' | 'W';
+	label: string;
+	gauges: TGauge[];
+}
+
+const gaugesByKind: GaugesByKind[] = [
 	{kind: 'P', label: 'Plain', gauges: []},
 	{kind: 'W', label: 'Wound', gauges: []},
 ];

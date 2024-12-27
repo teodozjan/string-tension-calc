@@ -6,7 +6,12 @@ interface Props {
 	onChange(packName: TPackName): void;
 }
 
-const packsByNumStrings: {num: TNumStrings; packNames: TPackName[]}[] = [
+interface PacksByNumStrings {
+	num: TNumStrings;
+	packNames: TPackName[];
+}
+
+const packsByNumStrings: PacksByNumStrings[] = [
 	{num: 6, packNames: []},
 	{num: 7, packNames: []},
 	{num: 8, packNames: []},

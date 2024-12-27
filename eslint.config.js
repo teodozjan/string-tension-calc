@@ -58,6 +58,7 @@ export default tseslint.config(
 			'@stylistic/object-curly-spacing': ['warn', 'never'],
 			'@stylistic/quotes': ['warn', 'single', {avoidEscape: true}],
 			'@stylistic/semi': ['warn', 'always'],
+			'@stylistic/space-infix-ops': 'warn',
 			'@stylistic/template-curly-spacing': ['warn', 'never'],
 			'@typescript-eslint/no-unused-vars': ['warn', {
 				'argsIgnorePattern': '^_',

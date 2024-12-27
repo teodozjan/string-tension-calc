@@ -3,10 +3,12 @@ import * as c from '@/model/consts';
 import {IScale, TScaleLength, TScaleMode} from '@/model/types';
 import css from './Scale.module.css';
 
-export default function Scale(props: {
+interface Props {
 	scale: IScale;
 	onChange(scale: IScale): void;
-}) {
+}
+
+export default function Scale(props: Props) {
 	const isMulti = props.scale.mode === 'multi';
 
 	function onChangeMode(ev: ChangeEvent<HTMLSelectElement>): void {

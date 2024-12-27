@@ -3,9 +3,11 @@ import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
 import css from './Summation.module.css';
 
-export default function Summation(props: {
+interface Props {
 	guitar: IGuitar;
-}) {
+}
+
+export default function Summation(props: Props) {
 	const unit = useStore(s => s.unit);
 	const sum = useMemo(() =>
 		props.guitar.strings.reduce((accum, str) =>

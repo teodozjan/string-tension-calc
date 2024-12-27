@@ -2,11 +2,13 @@ import {useMemo} from 'react';
 import * as c from '@/model/consts';
 import {TNote} from '@/model/types';
 
-export default function Note(props: {
+interface Props {
 	strIndex: number;
 	note: TNote;
 	onChange(note: TNote): void;
-}) {
+}
+
+export default function Note(props: Props) {
 	const pitches = useMemo(
 		() => c.PITCHES_FOR_STRING.find(p => p.stringIndex === props.strIndex)!.pitches,
 		[props.strIndex]);

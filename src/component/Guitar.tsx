@@ -8,10 +8,12 @@ import Summation from './Summation';
 import Tuning from './Tuning';
 import css from './Guitar.module.css';
 
-export default function Guitar(props: {
+interface Props {
 	guitarIndex: number;
 	guitar: IGuitar;
-}) {
+}
+
+export default function Guitar(props: Props) {
 	const moveLeft = useStore(s => s.moveLeft);
 	const remove = useStore(s => s.remove);
 	const changeScale = useStore(s => s.changeScale);

@@ -7,11 +7,13 @@ import Gauge from './Gauge';
 import Note from './Note';
 import css from './StringRow.module.css';
 
-export default function StringRow(props: {
+interface Props {
 	strIndex: number;
 	str: IString;
 	guitar: IGuitar;
-}) {
+}
+
+export default function StringRow(props: Props) {
 	const unit = useStore(s => s.unit);
 	const changeGauge = useStore(s => s.changeGauge);
 	const changeNote = useStore(s => s.changeNote);

@@ -1,58 +1,27 @@
-import styled from 'styled-components';
 import ghlogo from '/ghlogo.svg';
 import {useStore} from '@/model/useStore';
 import GuitarList from './GuitarList';
 import LineChart from './LineChart';
 import Unit from './Unit';
+import css from './App.module.css';
 
 export default function App() {
 	const addNew = useStore(s => s.addNew);
 
 	return <>
-		<Header>
+		<header className={css.header}>
 			<h1>String Tension Calculator</h1>
-			<DivTopButtons>
+			<div className={css.topButtons}>
 				<Unit />
-				<BtnAddNew onClick={addNew}>New guitar</BtnAddNew>
-			</DivTopButtons>
-			<LnkRepo href='https://github.com/rodrigocfd/string-tension-calc'>
+				<button type='button' onClick={addNew} className={css.addNew}>
+					New guitar
+				</button>
+			</div>
+			<a href='https://github.com/rodrigocfd/string-tension-calc' className={css.repo}>
 				<img src={ghlogo} />
-			</LnkRepo>
-		</Header>
+			</a>
+		</header>
 		<GuitarList />
 		<LineChart />
 	</>;
 }
-
-const Header = styled.header`
-	display: flex;
-	align-items: baseline;
-	& > h1 {
-		font-size: 16pt;
-		margin: 0 18px 12px 0;
-	}
-`;
-const DivTopButtons = styled.div`
-	display: flex;
-	@media (max-width: 480px) {
-		flex-direction: column;
-		gap: 6px;
-	}
-`;
-const BtnAddNew = styled.button`
-	margin-left: 12px;
-	white-space: nowrap;
-`;
-const LnkRepo = styled.a`
-	align-self: center;
-	&:hover {
-		transform: scale(1.1);
-	}
-	&:active {
-		transform: scale(1.2);
-	}
-	& > img {
-		width: 22px;
-		padding-left: 10px;
-	}
-`;

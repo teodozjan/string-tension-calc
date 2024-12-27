@@ -1,10 +1,10 @@
 import {useEffect, useMemo, useRef, useState} from 'react';
 import {Chart, ChartData} from 'chart.js/auto';
-import styled from 'styled-components';
 import * as c from '@/model/consts';
 import {countValidStrings} from '@/model/funcs';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
+import css from './LineChart.module.css';
 
 export default function LineChart() {
 	const guitars = useStore(s => s.guitars);
@@ -12,9 +12,9 @@ export default function LineChart() {
 	const canvas = useRef<HTMLCanvasElement | null>(null);
 	useChart(guitars, chartData, canvas.current);
 
-	return <DivChart>
+	return <div className={css.chart}>
 		<canvas ref={canvas} />
-	</DivChart>;
+	</div>;
 }
 
 function useChartData(guitars: IGuitar[]) {
@@ -75,8 +75,3 @@ function useChart(
 		}
 	}, [canvas, guitars, chart, chartData]);
 }
-
-const DivChart = styled.div`
-	max-width: 100vw;
-	max-height: 240px;
-`;

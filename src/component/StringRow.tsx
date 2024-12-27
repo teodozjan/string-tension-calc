@@ -1,10 +1,11 @@
 import {useMemo} from 'react';
-import styled from 'styled-components';
 import * as c from '@/model/consts';
-import {IGuitar, IString} from '@/model/types';
+import {cn} from '@/model/funcs';
+import {IGuitar, IString, TGauge, TNote, TPackName, TTuningName} from '@/model/types';
 import {useStore} from '@/model/useStore';
 import Gauge from './Gauge';
 import Note from './Note';
+import css from './StringRow.module.css';
 
 export default function StringRow(props: {
 	strIndex: number;
@@ -15,53 +16,57 @@ export default function StringRow(props: {
 	const changeGauge = useStore(s => s.changeGauge);
 	const changeNote = useStore(s => s.changeNote);
 
-	const isModifGauge = useMemo(() => {
-		const pack = c.PACKS.find(p => p.name === props.guitar.packName)!;
-		return pack.gauges[props.strIndex] !== props.str.gauge;
-	}, [props.guitar.packName, props.strIndex, props.str.gauge]);
-
-	const isModifNote = useMemo(() => {
-		const tuning = c.TUNINGS.find(t => t.name === props.guitar.tuningName)!;
-		return tuning.notes[props.strIndex] !== props.str.note;
-	}, [props.guitar.tuningName, props.strIndex, props.str.note]);
+	const clsGauge = useClsGauge(props.guitar.packName, props.strIndex, props.str.gauge);
+	const clsNote = useClsNote(props.guitar.tuningName, props.strIndex, props.str.note);
 
 	const tensionStr = useMemo(() =>
 		isNaN(props.str.tension) ? '–' : props.str.tension.toFixed(2),
 	[props.str.tension]);
 
 	return <>
-		<DivElemName>{c.STRING_NAMES[props.strIndex]}</DivElemName>
-		<DivElemModif isModif={isModifGauge}>
+		<div className={cn(css.elem, css.name)}>
+			{c.STRING_NAMES[props.strIndex]}
+		</div>
+		<div className={clsGauge}>
 			<Gauge gauge={props.str.gauge}
 				onChange={g => changeGauge(props.guitar, props.str, g)} />
-		</DivElemModif>
-		<DivElemModif isModif={isModifNote}>
+		</div>
+		<div className={clsNote}>
 			{!isNaN(props.str.tension) &&
 				<Note strIndex={props.strIndex}
 					note={props.str.note}
 					onChange={n => changeNote(props.guitar, props.str, n)} />
 			}
-		</DivElemModif>
-		<DivElem>
-			<InputTension
-				type='text'
+		</div>
+		<div className={css.elem}>
+			<input type='text'
+				className={css.tension}
 				value={tensionStr}
 				disabled /> {unit}
-		</DivElem>
+		</div>
 	</>;
 }
 
-const DivElem = styled.div`
-	margin: 2px 3px;
-`;
-const DivElemName = styled(DivElem)`
-	width: 26px;
-`;
-const DivElemModif = styled(DivElem)<{isModif: boolean}>`
-	padding: 1px;
-	border: 1px solid ${props => props.isModif ? '#f00' : '#fff'};
-`;
-const InputTension = styled.input`
-	width: 3.5em;
-	text-align: right;
-`;
+function useClsGauge(packName: TPackName, strIndex: number, strGauge: TGauge) {
+	return useMemo(() => {
+		const pack = c.PACKS.find(p => p.name === packName)!;
+		const isModif = pack.gauges[strIndex] !== strGauge;
+		return cn({
+			[css.elem]: true,
+			[css.yesModif]: isModif,
+			[css.notModif]: !isModif,
+		});
+	}, [packName, strIndex, strGauge]);
+}
+
+function useClsNote(tuningName: TTuningName, strIndex: number, strNote: TNote) {
+	return useMemo(() => {
+		const tuning = c.TUNINGS.find(t => t.name === tuningName)!;
+		const isModif = tuning.notes[strIndex] !== strNote;
+		return cn({
+			[css.elem]: true,
+			[css.yesModif]: isModif,
+			[css.notModif]: !isModif,
+		});
+	}, [tuningName, strIndex, strNote]);
+}

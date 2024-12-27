@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
-import styled from 'styled-components';
 import {IGuitar} from '@/model/types';
 import {useStore} from '@/model/useStore';
+import css from './Summation.module.css';
 
 export default function Summation(props: {
 	guitar: IGuitar;
@@ -13,14 +13,9 @@ export default function Summation(props: {
 	[props.guitar.strings]);
 
 	return <div>
-		∑ <InputTension
-			type='text'
+		∑ <input type='text'
+			className={css.tension}
 			value={sum.toFixed(2)}
 			disabled /> {unit}
 	</div>;
 }
-
-const InputTension = styled.input`
-	width: 3.5em;
-	text-align: right;
-`;

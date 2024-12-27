@@ -17,7 +17,7 @@ export default function Pack(props: {
 }) {
 	return <select value={props.packName} onChange={e => props.onChange(e.target.value as TPackName)}>
 		{packsByNumStrings.map(group =>
-			<optgroup key={group.num} label={group.num +  ' strings'}>
+			<optgroup key={group.num} label={group.num + ' strings'}>
 				{group.packNames.map(packName =>
 					<option key={packName} value={packName}>
 						[{group.num}] {packName}

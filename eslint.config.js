@@ -53,6 +53,7 @@ export default tseslint.config(
 				multiline: {delimiter: 'semi', requireLast: true},
 				singleline: {delimiter: 'semi', requireLast: false},
 			}],
+			'@stylistic/no-extra-semi': 'warn',
 			'@stylistic/no-multi-spaces': 'warn',
 			'@stylistic/no-whitespace-before-property': 'warn',
 			'@stylistic/object-curly-spacing': ['warn', 'never'],

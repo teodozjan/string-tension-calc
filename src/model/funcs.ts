@@ -21,7 +21,7 @@ export function cn(names: any): string { // eslint-disable-line @typescript-esli
 	} else if (Array.isArray(names)) { // string array
 		let s = '';
 		for (const name of names) {
-			if (name !== undefined) s += name + ' ';
+			if (name !== undefined && name !== null) s += name + ' ';
 		}
 		return s;
 	} else if (typeof names === 'object') {

@@ -2,6 +2,7 @@
 	padding: 2px 1px;
 	border: 1px solid #ddd;
 	border-top-width: 4px;
+
 	&.color0 { border-top-color: #36a2eb; }
 	&.color1 { border-top-color: #ff6384; }
 	&.color2 { border-top-color: #ff9f40; }

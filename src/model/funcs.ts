@@ -6,33 +6,30 @@ export function nextId(): number {
 	return curId++;
 }
 
-export function cn(...names: (string | undefined)[]): string;
-export function cn(names: (string | undefined)[]): string;
-export function cn(names: Record<string, boolean>): string;
-export function cn(names: any): string { // eslint-disable-line @typescript-eslint/no-explicit-any
-	if (typeof names === 'string' && arguments.length === 1) { // just 1 string
-		return names === undefined ? '' : names;
-	} else if (typeof names === 'string' && arguments.length > 1) { // multiple strings
-		let s = '';
-		for (const name of arguments) { // eslint-disable-line prefer-rest-params
-			if (name !== undefined) s += name + ' ';
+export function cn(
+	...items: (
+		string
+		| null
+		| undefined
+		| (string | null | undefined)[]
+		| Record<string, boolean>
+	)[]
+): string {
+	let fin = ' ';
+	for (const item of items) {
+		if (typeof item === 'string') {
+			fin += item + ' ';
+		} else if (Array.isArray(item)) {
+			for (const s of item) {
+				if (typeof s === 'string') fin += s + ' ';
+			}
+		} else if (typeof item === 'object') {
+			for (const key in item) {
+				if (item[key]) fin += key + ' ';
+			}
 		}
-		return s;
-	} else if (Array.isArray(names)) { // string array
-		let s = '';
-		for (const name of names) {
-			if (name !== undefined && name !== null) s += name + ' ';
-		}
-		return s;
-	} else if (typeof names === 'object') {
-		let s = '';
-		for (const name in names) {
-			if (names[name]) s += name + ' ';
-		}
-		return s;
-	} else {
-		throw 'Invalid class name input!';
 	}
+	return fin.substring(0, fin.length - 1);
 }
 
 export function genStrings(

@@ -53,8 +53,7 @@ function useClsGauge(packName: TPackName, strIndex: number, strGauge: TGauge) {
 	return useMemo(() => {
 		const pack = c.PACKS.find(p => p.name === packName)!;
 		const isModif = pack.gauges[strIndex] !== strGauge;
-		return cn({
-			[css.elem]: true,
+		return cn(css.elem, {
 			[css.yesModif]: isModif,
 			[css.notModif]: !isModif,
 		});
@@ -65,8 +64,7 @@ function useClsNote(tuningName: TTuningName, strIndex: number, strNote: TNote) {
 	return useMemo(() => {
 		const tuning = c.TUNINGS.find(t => t.name === tuningName)!;
 		const isModif = tuning.notes[strIndex] !== strNote;
-		return cn({
-			[css.elem]: true,
+		return cn(css.elem, {
 			[css.yesModif]: isModif,
 			[css.notModif]: !isModif,
 		});

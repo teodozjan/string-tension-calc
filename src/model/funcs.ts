@@ -10,7 +10,9 @@ export function cn(...items: (string | null | undefined | [string, boolean])[]):
 	let fin = '';
 	for (let i = 0; i < items.length; ++i) {
 		const item = items[i];
-		if (typeof item === 'string') {
+		if (item === null || item === undefined) {
+			continue;
+		} else if (typeof item === 'string') {
 			fin += item + ' ';
 		} else if (Array.isArray(item) && item.length === 2) {
 			if (typeof item[0] === 'string') {

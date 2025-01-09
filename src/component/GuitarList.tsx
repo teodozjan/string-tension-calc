@@ -1,5 +1,5 @@
 import {AnimatePresence, HTMLMotionProps, motion} from 'framer-motion';
-import {useStore} from '@/model/useStore';
+import useStore from '@/model/useStore';
 import Guitar from './Guitar';
 import css from '@/css/GuitarList.module.css';
 
@@ -11,10 +11,10 @@ const animation: HTMLMotionProps<'div'> = {
 };
 
 export default function GuitarList() {
-	const guitars = useStore(s => s.guitars);
+	const store = useStore();
 
 	return <AnimatePresence>
-		{guitars.map((g, idx) =>
+		{store.guitars.map((g, idx) =>
 			<motion.div key={g._id} layout {...animation} className={css.gtrBlock}>
 				<Guitar guitarIndex={idx} guitar={g} />
 			</motion.div>,

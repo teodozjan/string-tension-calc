@@ -1,6 +1,6 @@
 import {cn} from '@/model/funcs';
 import {IGuitar} from '@/model/types';
-import {useStore} from '@/model/useStore';
+import useStore from '@/model/useStore';
 import Pack from './Pack';
 import Scale from './Scale';
 import StringRow from './StringRow';
@@ -14,30 +14,26 @@ interface Props {
 }
 
 export default function Guitar(props: Props) {
-	const moveLeft = useStore(s => s.moveLeft);
-	const remove = useStore(s => s.remove);
-	const changeScale = useStore(s => s.changeScale);
-	const changePack = useStore(s => s.changePack);
-	const changeTuning = useStore(s => s.changeTuning);
+	const store = useStore();
 
 	return <div className={cn(css.guitar, css['color' + (props.guitarIndex % 7)])}>
 		<div className={css.topRow}>
 			<div className={css.name}>Guitar #{props.guitarIndex + 1}</div>
 			<div className={css.btns}>
 				{props.guitarIndex > 0 &&
-					<button onClick={() => moveLeft(props.guitar)} title='Move left'>⇐</button>
+					<button onClick={() => store.moveLeft(props.guitar)} title='Move left'>⇐</button>
 				}
-				<button onClick={() => remove(props.guitar)} title='Remove'>✕</button>
+				<button onClick={() => store.remove(props.guitar)} title='Remove'>✕</button>
 			</div>
 		</div>
 		<div>
-			<Scale scale={props.guitar.scale} onChange={s => changeScale(props.guitar, s)} />
+			<Scale scale={props.guitar.scale} onChange={s => store.changeScale(props.guitar, s)} />
 		</div>
 		<div>
-			<Pack packName={props.guitar.packName} onChange={p => changePack(props.guitar, p)} />
+			<Pack packName={props.guitar.packName} onChange={p => store.changePack(props.guitar, p)} />
 		</div>
 		<div className={css.tuningSumRow}>
-			<Tuning tuningName={props.guitar.tuningName} onChange={t => changeTuning(props.guitar, t)} />
+			<Tuning tuningName={props.guitar.tuningName} onChange={t => store.changeTuning(props.guitar, t)} />
 			<Summation guitar={props.guitar} />
 		</div>
 		<div className={css.stringRow}>

@@ -4,6 +4,7 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import valtio from 'eslint-plugin-valtio';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -21,10 +22,12 @@ export default tseslint.config(
 			'react-refresh': reactRefresh,
 			'react': react,
 			'simple-import-sort': simpleImportSort,
+			'valtio': valtio,
 			'@stylistic': stylistic,
 		},
 		rules: {
 			...reactHooks.configs.recommended.rules,
+			...valtio.configs.recommended.rules,
 			'react-refresh/only-export-components': ['warn', {allowConstantExport: true}],
 
 			'eqeqeq': ['warn', 'always'],
@@ -36,6 +39,7 @@ export default tseslint.config(
 			'simple-import-sort/imports': ['warn', {
 				groups: [['^\\u0000', '^node:', '^react$', '^react-dom$', '^@?\\w', '^', '^\\.', '^.+\\.css$']],
 			}],
+			'valtio/state-snapshot-rule': 'error',
 			'@stylistic/array-bracket-spacing': ['warn', 'never'],
 			'@stylistic/comma-dangle': ['warn', 'always-multiline'],
 			'@stylistic/comma-spacing': 'warn',

@@ -2,7 +2,7 @@ import {useMemo} from 'react';
 import * as c from '@/model/consts';
 import {cn} from '@/model/funcs';
 import {IGuitar, IString, TGauge, TNote, TPackName, TTuningName} from '@/model/types';
-import {useStore} from '@/model/useStore';
+import useStore from '@/model/useStore';
 import Gauge from './Gauge';
 import Note from './Note';
 import css from '@/css/StringRow.module.css';
@@ -14,9 +14,7 @@ interface Props {
 }
 
 export default function StringRow(props: Props) {
-	const unit = useStore(s => s.unit);
-	const changeGauge = useStore(s => s.changeGauge);
-	const changeNote = useStore(s => s.changeNote);
+	const store = useStore();
 
 	const clsGauge = useClsGauge(props.guitar.packName, props.strIndex, props.str.gauge);
 	const clsNote = useClsNote(props.guitar.tuningName, props.strIndex, props.str.note);
@@ -31,20 +29,20 @@ export default function StringRow(props: Props) {
 		</div>
 		<div className={clsGauge}>
 			<Gauge gauge={props.str.gauge}
-				onChange={g => changeGauge(props.guitar, props.str, g)} />
+				onChange={g => store.changeGauge(props.guitar, props.str, g)} />
 		</div>
 		<div className={clsNote}>
 			{!isNaN(props.str.tension) &&
 				<Note strIndex={props.strIndex}
 					note={props.str.note}
-					onChange={n => changeNote(props.guitar, props.str, n)} />
+					onChange={n => store.changeNote(props.guitar, props.str, n)} />
 			}
 		</div>
 		<div className={css.elem}>
 			<input type='text'
 				className={css.tension}
 				value={tensionStr}
-				disabled /> {unit}
+				disabled /> {store.unit}
 		</div>
 	</>;
 }

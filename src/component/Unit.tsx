@@ -1,12 +1,11 @@
 import * as c from '@/model/consts';
 import {TUnit} from '@/model/types';
-import {useStore} from '@/model/useStore';
+import useStore from '@/model/useStore';
 
 export default function Unit() {
-	const unit = useStore(s => s.unit);
-	const setUnit = useStore(s => s.setUnit);
+	const store = useStore();
 
-	return <select value={unit} onChange={e => setUnit(e.target.value as TUnit)}>
+	return <select value={store.unit} onChange={e => store.setUnit(e.target.value as TUnit)}>
 		{c.UNITS.map(u =>
 			<option key={u.name} value={u.name}>
 				unit: {u.name}

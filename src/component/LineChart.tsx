@@ -3,14 +3,14 @@ import {Chart, ChartData} from 'chart.js/auto';
 import * as c from '@/model/consts';
 import {countValidStrings} from '@/model/funcs';
 import {IGuitar} from '@/model/types';
-import {useStore} from '@/model/useStore';
+import useStore from '@/model/useStore';
 import css from '@/css/LineChart.module.css';
 
 export default function LineChart() {
-	const guitars = useStore(s => s.guitars);
-	const chartData = useChartData(guitars);
+	const store = useStore();
+	const chartData = useChartData(store.guitars);
 	const canvas = useRef<HTMLCanvasElement | null>(null);
-	useChart(guitars, chartData, canvas.current);
+	useChart(store.guitars, chartData, canvas.current);
 
 	return <div className={css.chart}>
 		<canvas ref={canvas} />

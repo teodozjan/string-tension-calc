@@ -210,7 +210,8 @@ export const TUNINGS = [
 	{name: 'Drop B', notes: ['C#4', 'G#3', 'E3', 'B2', 'F#2', 'B1', 'F#1', 'C#1']},
 
 	{name: 'Placebo', notes: ['C4', 'C4', 'G#3', 'D#3', 'A#2', 'F2', 'C2', 'G1']},
-	{name: 'Midwest Emo', notes: ['E4', 'C4', 'G3', 'C3', 'A2', 'F2', 'C2', 'G1']},
+	{name: 'Midwest Emo', notes: ['E4', 'C4', 'G3', 'C3', 'A2', 'F2', 'B#2', 'F#1']},
+	{name: 'Celtic', notes: ['D4', 'A3', 'G3', 'D3', 'A2', 'D2', 'A1', 'E1']},
 	
 	
 ] as const;

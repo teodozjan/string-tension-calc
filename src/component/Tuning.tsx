@@ -14,11 +14,23 @@ interface TuningsByKind {
 const tuningsByKind: TuningsByKind[] = [
 	{kind: 'Standard', tuningNames: []},
 	{kind: 'Drop', tuningNames: []},
+	{kind: 'Other', tuningNames: []},
 ];
 c.TUNINGS.forEach(defTuning => {
-	const kind = (defTuning.name.endsWith('standard')) ? 'Standard' : 'Drop';
-	tuningsByKind.find(defTuning => kind === defTuning.kind)!
-		.tuningNames.push(defTuning.name);
+	let kind;
+	if (defTuning.name.endsWith('standard')) {
+		kind = 'Standard';
+	} else if (defTuning.name.startsWith('Drop')) {
+		kind = 'Drop';
+	} else {
+		kind = 'Other';
+	}
+
+	const tuningGroup = tuningsByKind.find(group => group.kind === kind);
+
+	if (tuningGroup) {
+		tuningGroup.tuningNames.push(defTuning.name);
+	}
 });
 
 export default function Tuning(props: Props) {
